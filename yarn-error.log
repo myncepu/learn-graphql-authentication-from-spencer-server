@@ -1,0 +1,82 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add bcrypt
+
+PATH: 
+  /Users/yanpengqiang/.fastlane/bin:/usr/local/bin:/usr/local/sbin:/Users/yanpengqiang/Developer/PythonProgrammingEnvironments/Python3.6Env/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Library/TeX/texbin/:/Applications/AMPPS/mysql/bin:/Users/yanpengqiang/pear/bin:/Users/yanpengqiang/Library/Android/sdk/tools:/Users/yanpengqiang/Library/Android/sdk/platform-tools:/Users/yanpengqiang/Library/Android/sdk/tools:/Users/yanpengqiang/Library/Android/sdk/platform-tools
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.11.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "unnamed_launchpad_project",
+    "version": "0.1.0",
+    "description": "",
+    "main": "./src/server.js",
+    "scripts": {
+      "start": "nodemon ./src/server.js --exec babel-node -e js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "devDependencies": {
+      "babel-cli": "^6.24.0",
+      "babel-plugin-transform-async-generator-functions": "^6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.23.0",
+      "babel-plugin-transform-runtime": "^6.23.0",
+      "babel-preset-latest": "^6.23.0",
+      "nodemon": "^1.11.0"
+    },
+    "dependencies": {
+      "apollo-engine": "^1.0.4-evans.0",
+      "apollo-server-express": "^1.2.0",
+      "body-parser": "^1.18.2",
+      "express": "^4.16.2",
+      "graphql": "^0.12.3",
+      "graphql-tools": "^2.15.0",
+      "launchpad-module": "^0.0.0",
+      "mongodb": "^3.0.7",
+      "webtask-tools": "^3.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: /Users/yanpengqiang/Desktop/unnamed_launchpad_project/node_modules/bcrypt: Command failed.
+  Exit code: 6
+  Command: sh
+  Arguments: -c node-pre-gyp install --fallback-to-build
+  Directory: /Users/yanpengqiang/Desktop/unnamed_launchpad_project/node_modules/bcrypt
+  Output:
+  node-pre-gyp info it worked if it ends with ok
+  node-pre-gyp info using node-pre-gyp@0.9.1
+  node-pre-gyp info using node@8.11.1 | darwin | x64
+  node-pre-gyp info check checked for "/Users/yanpengqiang/Desktop/unnamed_launchpad_project/node_modules/bcrypt/lib/binding/bcrypt_lib.node" (not found)
+  node-pre-gyp http GET https://github.com/kelektiv/node.bcrypt.js/releases/download/v2.0.1/bcrypt_lib-v2.0.1-node-v57-darwin-x64-unknown.tar.gz
+  node-pre-gyp http 302 https://github.com/kelektiv/node.bcrypt.js/releases/download/v2.0.1/bcrypt_lib-v2.0.1-node-v57-darwin-x64-unknown.tar.gz
+  node-pre-gyp ERR! Completion callback never invoked! 
+  node-pre-gyp ERR! System Darwin 17.5.0
+  node-pre-gyp ERR! command "/usr/local/bin/node" "/Users/yanpengqiang/Desktop/unnamed_launchpad_project/node_modules/bcrypt/node_modules/.bin/node-pre-gyp" "install" "--fallback-to-build"
+  node-pre-gyp ERR! cwd /Users/yanpengqiang/Desktop/unnamed_launchpad_project/node_modules/bcrypt
+  node-pre-gyp ERR! node -v v8.11.1
+  node-pre-gyp ERR! node-pre-gyp -v v0.9.1
+  node-pre-gyp ERR! This is a bug in `node-pre-gyp`.
+  node-pre-gyp ERR! Try to update node-pre-gyp and file an issue if it does not help:
+  node-pre-gyp ERR!     <https://github.com/mapbox/node-pre-gyp/issues>
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

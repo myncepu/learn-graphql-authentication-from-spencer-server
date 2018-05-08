@@ -7,8 +7,6 @@ import * as Schema from './schema';
 const PORT = 3000;
 const server = express();
 
-
-
 const schemaFunction =
   Schema.schemaFunction ||
   function() {

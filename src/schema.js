@@ -1,11 +1,13 @@
 import { makeExecutableSchema } from 'graphql-tools';
-import { MongoClient } from 'mongodb';
+import { MongoClient, ObjectId } from 'mongodb';
 import jwt from 'jsonwebtoken'
+import bcrypt from 'bcrypt'
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = `
   type Query {
     currentUser: User
+    hello: String
   }
 
   type User {
@@ -25,6 +27,10 @@ const resolvers = {
   Query: {
     currentUser: (root, args, context) => {
       return context.user
+    },
+
+    hello: (root, args, context) => {
+      return 'Hello debuger!'
     }
   },
   Mutation: {
@@ -34,11 +40,11 @@ const resolvers = {
       if (existingUser) {
         throw new Error('Email already used');
       }
-      // 安装不了bcrypt,之后试试其他包
-      // const hash = await bcrypt.hash(password, 10)
+      // 安装不了bcrypt,之后试试其他包,后来又可以安装了
+      const hash = await bcrypt.hash(password, 10)
       await Users.insert({
         email,
-        password,
+        password: hash,
       })
       const user = await Users.findOne({ email })
       // Generate the jwt and add it to the user document being returned.
@@ -79,6 +85,7 @@ export async function context(headers, secrets) {
     client = await MongoClient.connect(secrets.MONGO_URL)
     mongo = client.db('learn-graphql-authentication-from-spencer')
   }
+  console.log(client)
   const user = await getUser(headers['authorization'], secrets, mongo);
 
   return {

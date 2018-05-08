@@ -5,6 +5,7 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "nodemon ./src/server.js --exec babel-node -e js",
+    "start:debug": "nodemon ./src/server.js --exec 'babel-node --inspect-brk=1234' -e js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,6 +20,7 @@
   "dependencies": {
     "apollo-engine": "^1.0.4-evans.0",
     "apollo-server-express": "^1.2.0",
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "graphql": "^0.12.3",
